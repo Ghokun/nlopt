@@ -2,4 +2,4 @@ sut:
   build: .
   volumes:
     - .:/opt
-  command: /opt/run.sh
+  command: /opt/test/run.sh
