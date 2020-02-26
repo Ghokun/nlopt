@@ -4,10 +4,10 @@ ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt update \
  && apt install -y --no-install-recommends \
-		build-essential \
-		cmake \
-		git \
-		ca-certificates \
+                build-essential \
+                cmake \
+                git \
+                ca-certificates \
  && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /opt
@@ -16,10 +16,10 @@ RUN git clone https://github.com/stevengj/nlopt.git \
  && mkdir build \
  && cd build \
  && cmake -D NLOPT_PYTHON=OFF \
-	  -D NLOPT_OCTAVE=OFF \
-	  -D NLOPT_MATLAB=OFF \
-	  -D NLOPT_GUILE=OFF \
-	  -D NLOPT_SWIG=OFF \
+          -D NLOPT_OCTAVE=OFF \
+          -D NLOPT_MATLAB=OFF \
+          -D NLOPT_GUILE=OFF \
+          -D NLOPT_SWIG=OFF \
           .. \
  && make \
  && make install \
