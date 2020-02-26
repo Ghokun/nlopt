@@ -1,9 +1,7 @@
 FROM ubuntu:18.04
 
-ENV DEBIAN_FRONTEND noninteractive
-
-RUN apt update \
- && apt install -y --no-install-recommends \
+RUN DEBIAN_FRONTEND=noninteractive apt update \
+ && apt install -qq -y --no-install-recommends \
                 build-essential \
                 cmake \
                 git \
