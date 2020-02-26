@@ -7,7 +7,8 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update \
             cmake \
             git \
             ca-certificates \
- && rm -rf /var/lib/apt/lists/*
+ && rm -rf /var/lib/apt/lists/* \
+ && rm -rf /tmp/*
 
 WORKDIR /opt
 RUN git clone https://github.com/stevengj/nlopt.git \
