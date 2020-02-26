@@ -1,11 +1,12 @@
 FROM ubuntu:18.04
+LABEL maintainer="ghokun.github.io"
 
-RUN DEBIAN_FRONTEND=noninteractive apt update \
- && apt install -qq -y --no-install-recommends \
-                build-essential \
-                cmake \
-                git \
-                ca-certificates \
+RUN DEBIAN_FRONTEND=noninteractive apt-get update \
+ && apt-get install -qq -y --no-install-recommends \
+            build-essential \
+            cmake \
+            git \
+            ca-certificates \
  && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /opt
@@ -25,4 +26,4 @@ RUN git clone https://github.com/stevengj/nlopt.git \
  && rm -rf /opt/nlopt \
  && rm -rf /tmp/*
 
-CMD "/bin/bash"
+CMD ["/bin/bash"]
