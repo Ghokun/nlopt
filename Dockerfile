@@ -1,4 +1,4 @@
-FROM ubuntu:lts
+FROM ubuntu:18.04
 
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -8,6 +8,7 @@ RUN apt update \
 		pkg-config \
 		cmake \
 		git \
+		ca-certificates \
  && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /opt
