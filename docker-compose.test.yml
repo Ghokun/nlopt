@@ -1,5 +1,5 @@
 sut:
   build: .
   volumes:
-    - .:/opt
-  command: /opt/test/run.sh
+    - ./test:/opt
+  command: /opt/run.sh
